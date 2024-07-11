@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIET Group of Institutions</title>
+    <style>
+        body {
+            background-color: aqua;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        header{
+            background-color:tomato;
+            margin-top: -2%;
+            margin-left: -1%;
+            margin-right: -1%;
+        }
+        
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .dropdown {
+            margin: 20px 0;
+        }
+        button {
+            background-color: yellowgreen;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <br>
+        <center><h1>KIET GROUP OF INSTITUTION</h1></center>
+        <h2><center>SEMESTER GRADE POINT AVERAGE (SGPA)</center></h2>
+        <br>
+    </header>
+    <div id="container">
+        <div class="dropdown">
+            <label for="semester">Select Semester:</label>
+            <select id="semester">
+                <option value="1-1">1-1</option>
+                <option value="1-2">1-2</option>
+                <option value="2-1">2-1</option>
+                <option value="2-2">2-2</option>
+                <option value="3-1">3-1</option>
+                <option value="3-2">3-2</option>
+                <option value="4-1">4-1</option>
+                <option value="4-2">4-2</option>
+                <option value="cgpa">CGPA</option>
+            </select>
+        </div>
+        <button onclick="openSemesterPage()">Go</button>
+    </div>
+
+    <script>
+        function openSemesterPage() {
+            var semester = document.getElementById("semester").value;
+            var url = semester + ".html";  // Assuming the pages are named 1-1.html, 1-2.html, etc.
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

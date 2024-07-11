@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aqua;
+        }
+        header{
+            background-color:tomato;
+            margin-top: -2%;
+            margin-left: -1%;
+            margin-right: -1%;
+        }
+        #a{
+            background-color: yellowgreen;
+        }
+        .ii{
+            background-color: white;
+        }
+        
+        .ee{
+            background-color: hotpink;
+            margin-right: 0%;
+            margin-left: 0%;
+            width: auto;
+            text-align: center;
+        }
+        .d{
+            background-color: khaki;
+            width: 100%;
+            text-align: center;
+        }
+        .m{
+            background-color:whitesmoke;
+            text-align:center;
+            margin-right: 10%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <br>
+        <center><h1>KIET GROUP OF INSTITUTION</h1></center>
+        <h2><center>SEMESTER GRADE POINT AVERAGE (SGPA)</center></h2>
+        <br>
+    </header>
+    <br>
+    <br>
+    <br>
+    <div class="q">
+    <div class="m">
+        <br>
+        <label for="m-3">M-3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::</label><input class="ii" type="text" id="m-3">
+        <br>
+        <br>
+        <label for="mfcs">MFCS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::</label><input class="ii" type="text" id="mfcs">
+        <br>
+        <br>
+        <label for="aids">AIDS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::</label><input class="ii" type="text" id="aids">
+        <br>
+        <br>
+        <label for="java">JAVA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::</label><input class="ii" type="text" id="java">
+        <br><br>
+        <label for="dbms">DBMS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::</label><input class="ii" type="text" id="dbms">
+        <br>
+        <br>
+        <label for="java-lab">JAVA-LAB::</label><input class="ii" type="text" id="java-lab">
+        <br>
+        <br>
+        <label for="dbms-lab">DBMS-LAB::</label><input class="ii" type="text" id="dbms-lab">
+        <br>
+        <br>
+        <label for="aids-lab">AIDS-LAB::</label><input class="ii" type="text" id="aids-lab">
+        <br>
+        <br>
+        <label for="mad">MAD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::</label><input class="ii" type="text" id="mad">
+        <br>
+        <br>
+        <button id="a" type="button" onclick="calculateTotal()"><h3><b id="a">SUBMIT</b></h3></button>
+    </div>
+    <div class="ee">
+        <h1><p id="result"></p></h1>
+    </div>
+
+    <script>
+        function A(grade) {
+            switch (grade.toUpperCase()) {
+                case 'A+': return 10;
+                case 'A': return 9;
+                case 'B': return 8;
+                case 'C': return 7;
+                case 'D': return 6;
+                case 'E': return 5;
+                case 'F': return 0;
+                default: return 0;
+            }
+        }
+
+        function calculateTotal(){
+            var a = A(document.getElementById("m-3").value);
+            var b = A(document.getElementById("mfcs").value);
+            var c = A(document.getElementById("aids").value);
+            var d = A(document.getElementById("java").value);
+            var e = A(document.getElementById("dbms").value);
+            var f = A(document.getElementById("java-lab").value);
+            var g = A(document.getElementById("dbms-lab").value);
+            var h = A(document.getElementById("aids-lab").value);
+            var i = A(document.getElementById("mad").value);
+            var ll = (((a + b + c + d + e) * 3) + ((f + g + h) * 1.5) + (i * 2)) / 21.5;
+            document.getElementById("result").innerText = "Total SGPA: " + ll.toFixed(2);
+        }
+    </script>
+    </div>
+</body>
+</html>
